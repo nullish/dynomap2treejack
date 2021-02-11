@@ -1,0 +1,23 @@
+{
+  "name": "dynomap2treejack",
+  "version": "1.0.0",
+  "description": "Converts a DynoMap generated HTML sitemap into a CSV for importing to Optimal Workshop Treejack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nullish/dynomap2treejack.git"
+  },
+  "keywords": [
+    "dynomap",
+    "treejack"
+  ],
+  "author": "Nullish",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nullish/dynomap2treejack/issues"
+  },
+  "homepage": "https://github.com/nullish/dynomap2treejack#readme"
+}
