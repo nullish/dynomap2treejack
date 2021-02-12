@@ -1,11 +1,20 @@
-const dynoJack = () => {
 	/* 
 	Parse DynoMap produced HTML sitemap and output indented text equivalent using comma delimiters
 	to indicate levels in nav tree.
 	*/
-	const sitemap = document.getElementsByTagName("a");
+
+	document.querySelector(".get-sitemap").addEventListener("click", () => {
+    fetch("https://gist.githubusercontent.com/nullish/753bf8b435a84681d12a786b4696911c/raw/9b0e902bcb8d52922189e22bb18f8e133cbe389e/dynomap-test.html")
+        .then((response) => response.text())
+        .then((text) => {
+        	console.log(text);
+            const sitemap = document.implementation.createHTMLDocument("Sitemap").documentElement;
+            sitemap.innerHTML = text;
+            // document.querySelector(".element_on_main_page").textContent = otherDoc.querySelector(".awesome_external_element").textContent;
+            const siteLinks = sitemap.getElementsByTagName("a");
+            console.log(sitemap);
 	let linkList = "";
-	for (let e of sitemap) { 
+	for (let e of siteLinks) { 
 		let linkClass = e.getAttribute("class");
 		let level = linkClass.match(/[0-9]{1,}/)[0];
 		let linkIndent = "";
@@ -16,6 +25,10 @@ const dynoJack = () => {
 		linkList += `${linkIndent}${linkName}\n`;
 	}
 	console.log(linkList);
+        });
+});
+
+	
 
 	/* ******* TODO
 
@@ -28,5 +41,3 @@ const dynoJack = () => {
 	Fetch: https://developers.google.com/web/updates/2015/03/introduction-to-fetch
 
 	*/
-
-}
