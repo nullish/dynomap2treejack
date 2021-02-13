@@ -4,21 +4,33 @@ body {
 }
 
 .left {
-    width: 20%;
+    width: 5%;
     float: right;
 }
 
 .right {
-    width: 20%;
+    width: 5%;
 }
 
 .middle {
 	background-color: white;
     float: right;
-    width: 60%;
+    width: 90%;
     border-width: 0 1px 0 1px;
     border-style: solid;
     padding: 10px 10px 200px 10px;
+}
+
+input#fi {
+    border-style: solid;
+    border-width: thin;
+    padding: 0.25em;
+    border-radius: 0.25em;
+}
+
+#copy-text {
+    margin-top: 1em;
+    display: block;
 }
 
 .output {
