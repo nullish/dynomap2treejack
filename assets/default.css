@@ -21,11 +21,22 @@ body {
     padding: 10px 10px 200px 10px;
 }
 
+
+form {
+    border-top: solid;
+    border-width: thin;
+    padding-top: 1em;
+}
+
 input#fi {
     border-style: solid;
     border-width: thin;
     padding: 0.25em;
     border-radius: 0.25em;
+}
+
+.fel {
+    margin-bottom: 1em;
 }
 
 textarea {

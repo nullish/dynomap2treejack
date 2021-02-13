@@ -8,19 +8,28 @@
 	<div class="left">&nbsp;</div>
 	<div class="middle">
 		<h1>dynomap2treejack</h1>
-		<form name="sitemap-handler" class="sitemap-handler">
-			<label for="remove-text">Text to remove from title tags</label>
-			<input type="text" name="remove-text" id="remove-text">
-			<label for="fi">DynoMap HTML site map</label>
-			<input type="file" name="fi" id="fi" />
-			<a href="#" class="get-sitemap" >Get sitemap</a>
-			<a href="#" id="copy-text">Copy to clipboard</a>
-		</form>
-		<div class="output">
-			<pre id="node-list">Sitemap will appear here ...</pre>
+		<p>This tool lets you convert a <a href="https://dynomapper.com/">DynoMapper</a> generated <b>HTML</b> site map 
+			and convert it to a format you can copy into an <a href="https://www.optimalworkshop.com/">Optimal Workshop</a> TreeJack study.</p>
+			<p>
+				You can specify a string or regular expression to be removed from all title tags.  E.g. Your pages may have a common suffix you want to remove so something in the formm 'Your page name <i>- Organisation name</i>', would become  'e removed from all title tags.  E.g. Your pages may have a common suffix you want to remove so something in the formm 'Your page name'.
+			</p>
+			<form name="sitemap-handler" class="sitemap-handler">
+				<div class="fel">
+					<label for="remove-text">Text to remove from title tags</label>
+					<input type="text" name="remove-text" id="remove-text"><br>
+				</div>
+				<div class="fel">
+					<label for="fi">DynoMap HTML site map</label>
+					<input type="file" name="fi" id="fi" /><br>
+				</div>
+				<a href="#" class="get-sitemap" >Get sitemap</a>
+				<a href="#" id="copy-text">Copy to clipboard</a>
+			</form>
+			<div class="output">
+				<pre id="node-list">Sitemap will appear here ...</pre>
+			</div>
 		</div>
-	</div>
-	<div class="right"></div>
-	<script type="text/javascript" src="assets/dynomap2treejack.js"></script>
-</body>
-</html>
+		<div class="right"></div>
+		<script type="text/javascript" src="assets/dynomap2treejack.js"></script>
+	</body>
+	</html>
