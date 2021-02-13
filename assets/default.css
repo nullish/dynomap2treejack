@@ -28,6 +28,10 @@ input#fi {
     border-radius: 0.25em;
 }
 
+textarea {
+    width: 100%;
+}
+
 #copy-text {
     margin-top: 1em;
     display: block;

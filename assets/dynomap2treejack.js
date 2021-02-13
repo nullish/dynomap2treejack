@@ -35,14 +35,17 @@
         });
 
   document.querySelector("#copy-text").addEventListener("click", () => {
-const copyToClipboard = str => {
-  const el = document.createElement('textarea');
-  el.value = str;
-  document.body.appendChild(el);
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el);
-};
+    const copyToClipboard = str => {
+      const el = document.createElement('textarea');
+      el.value = str;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      return str;
+    };
+    let str = document.getElementById("node-list").innerText;
+    console.log(copyToClipboard(str));
   })
 
 /*
