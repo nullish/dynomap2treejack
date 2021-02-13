@@ -12,6 +12,8 @@
 			sitemap.innerHTML = text;
             // document.querySelector(".element_on_main_page").textContent = otherDoc.querySelector(".awesome_external_element").textContent;
             const siteLinks = sitemap.getElementsByTagName("a");
+            const removeText = document.getElementById("remove-text").value;
+            console.log(removeText);
             let linkList = "";
             for (let e of siteLinks) { 
             	let linkClass = e.getAttribute("class");
@@ -21,6 +23,10 @@
             		linkIndent += "\t";
             	}
             	let linkName = e.innerText;
+              if (removeText) {
+                let rx = new RegExp(removeText);
+                linkName = linkName.replace(rx, '');
+              }
             	linkList += `${linkIndent}${linkName}\n`;
             }
             document.getElementById("node-list").innerText = linkList;
