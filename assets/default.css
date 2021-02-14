@@ -46,6 +46,7 @@ textarea {
 #copy-text {
     margin-top: 1em;
     display: block;
+    visibility: hidden;
 }
 
 .output {

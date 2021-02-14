@@ -30,6 +30,7 @@
               linkList += `${linkIndent}${linkName}\n`;
             }
             document.getElementById("node-list").innerText = linkList;
+            document.getElementById("copy-text").setAttribute("style", "visibility:visible");
           }
           reader.readAsText(file)
         });
