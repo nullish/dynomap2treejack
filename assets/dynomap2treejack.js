@@ -7,17 +7,27 @@
 		const file = document.getElementById('fi').files[0];
 		const reader = new FileReader();
 		reader.onload = function(event) {
-			const text = event.target.result;
-			const sitemap = document.implementation.createHTMLDocument("Sitemap").documentElement;
-			sitemap.innerHTML = text;
+      const getLevel = (link) => {
+        const rx = new RegExp(/[0-9]{1,}/);
+        const className = link.getAttribute("class");
+        const thisLevel = className.match(rx)[0];
+        return thisLevel;
+      }
+      const text = event.target.result;
+      const sitemap = document.implementation.createHTMLDocument("Sitemap").documentElement;
+      sitemap.innerHTML = text;
+
+      const lowLinks = sitemap.querySelectorAll("a.l5bg + ul");
+      for (let ll of lowLinks) {
+        while (ll.hasChildNodes()) { ll.removeChild(ll.firstChild) };
+      }
       const siteLinks = sitemap.getElementsByTagName("a");
       const removeText = document.getElementById("remove-text").value;
-      console.log(removeText);
       let linkList = "";
       const maxLevel = document.getElementById("levels").value;
+
       for (let e of siteLinks) { 
-       let linkClass = e.getAttribute("class");
-       let level = linkClass.match(/[0-9]{1,}/)[0];
+       let level = getLevel(e);
        if (level <= maxLevel) {
          let linkIndent = "";
          for (let i = 0; i < level; i++) {
@@ -30,6 +40,7 @@
         }
         linkList += `${linkIndent}${linkName}\n`;
       }
+
     }
     document.getElementById("node-list").innerText = linkList;
     document.getElementById("copy-text").setAttribute("style", "visibility:visible");
